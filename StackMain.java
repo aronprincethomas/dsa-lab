@@ -68,13 +68,13 @@ class StackMain{
 		
 		while(true){
 		
-		System.out.println("1.Push, 2.Pop, 3.Peek, 4.Exit");
+		System.out.println("Choose an action: 1.Push, 2.Pop, 3.Peek, 4.Exit");
 		int s = scanner.nextInt();
 		
 		switch (s){
 		
 		case 1:
-			System.out.print("Enter the value to push: ")
+			System.out.print("Enter the value to push: ");
 			int value = scanner.nextInt();
 			stack.push(value);
 		
@@ -82,17 +82,23 @@ class StackMain{
 		
 		case 2:
 		
-			System.out.println(stack.pop());
-		
+			int poppedValue = stack.pop();
+			if(poppedValue != -1){
+				System.out.println("poppedValue:" + poppedValue);
+			}
+			
 		break;
 		
 		case 3:
 		
-			System.out.println(stack.peek());
-		
+			int peekedValue = stack.peek();
+			if(peekedValue != -1){
+				System.out.println("peekedValue:" + peekedValue);
+			}
 		break;
 		
 		case 4:
+			System.out.println("Exiting......");
 			scanner.close();
 			System.exit(0);
 
@@ -101,6 +107,6 @@ class StackMain{
 		default:
 		}
 		}
-	}
+		}
 
 }
